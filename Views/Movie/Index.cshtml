@@ -1,0 +1,49 @@
+﻿@model IEnumerable< MVCInAction.Models.Movie>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Movie Info:</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            if (movie.movieName.Equals("The Godfather"))
+            {
+                <tr>
+                    <td align="center">Movie name: @movie.movieName</td>
+                </tr>
+
+                <tr>
+                    <td align="center">released date: @movie.releasedYear</td>
+                </tr>
+                <tr>
+                    <td align="center">Movie type: @movie.genre</td>
+                </tr>
+
+            }
+            else
+            {
+            <tr>
+                <td>Movie name: @movie.movieName</td>
+            </tr>
+
+            <tr>
+                <td>released date: @movie.releasedYear</td>
+            </tr>
+            <tr>
+                <td>Movie type: @movie.genre</td>
+            </tr>
+            }
+        }
+    </tbody>
+
+</table>
+
+
